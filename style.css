@@ -1,0 +1,9 @@
+.typesOfRooms{
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+}
+
+.typeOfRoom{
+    width: 100px;
+}

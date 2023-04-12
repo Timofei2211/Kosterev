@@ -69,8 +69,28 @@
 
     let checkboxesChecked = []; // можно в массиве их хранить, если нужно использовать 
     let checkboxesUnChecked = []; // можно в массиве их хранить, если нужно использовать 
+
+    function makeUL(array) {
+        // Create the list element:
+        let list = document.createElement('li');
+    
+        for (let i = 0; i < array.length; i++) {
+            // Create the list item:
+            let item = document.createElement('ul');
+    
+            // Set its contents:
+            item.appendChild(document.createTextNode(array[i]));
+    
+            // Add it to the list:
+            list.appendChild(item);
+        }
+    
+        // Finally, return the constructed list:
+        return list;
+    }
+
     function getCheckedCheckBoxes() {
-        for (const checkbox of document.getElementsByName('source')) {
+        for (const checkbox of document.getElementsByClassName('medium')) {
             //iterating over all matched elements
             
            if(checkbox.checked == true)
@@ -120,6 +140,17 @@
         console.log("1-я горничная : " + maid1);
         console.log("2-я горничная : " + maid2);
         console.log("3-я горничная : " + maid3);
+        let textNode1 = document.createTextNode('1-я горничная : ');
+        let textNode2 = document.createTextNode('2-я горничная : ');
+        let textNode3 = document.createTextNode('3-я горничная : ');
+        let textNode4 = document.createTextNode('4-я горничная : ');
+        document.getElementById('newArray').append(textNode1);
+        document.getElementById('newArray').appendChild(makeUL(maid1));
+        document.getElementById('newArray').append(textNode2);
+        document.getElementById('newArray').appendChild(makeUL(maid2));
+        document.getElementById('newArray').append(textNode3);
+        document.getElementById('newArray').appendChild(makeUL(maid3));
+        document.getElementById('newArray').append(textNode4);
 
         //раздели номера на классы .ыаи
     }
