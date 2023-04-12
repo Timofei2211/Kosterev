@@ -153,5 +153,6 @@
         document.getElementById('newArray').append(textNode4);
 
         //раздели номера на классы .ыаи
+        //2 события через ; onclick
     }
 
