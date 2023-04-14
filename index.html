@@ -236,22 +236,29 @@
                   <div class="typeOfRoom">  
                     <div>
                       <input class="hard" type="checkbox" id="201" name="source" value="201">
-                      <label for="201">201</label>
+                      <label class="hard" for="201">201</label>
                     </div>
                     <div>
                       <input class="hard" type="checkbox" id="211" name="source" value="211">
-                      <label for="211">211</label>
+                      <label class="hard" for="211">211</label>
                     </div>
                     <div>
                       <input class="hard" type="checkbox" id="213" name="source" value="213">
-                      <label for="213">213</label>
+                      <label class="hard" for="213">213</label>
                     </div>
                   </div>  
                   <div class="typesOfRooms" id="newArray"></div>
+                  <div class="Output">
+                  <p id="Aika"></p>
+                  <p id="Madina"></p>
+                  <p id="Nurkiz"></p>
+                  <p id="Julya"></p>
+                  </div>
+                  
                 </div>
               </fieldset>
             </form>
-            <input type="button" onclick="getCheckedCheckBoxes()" value="Вывести список">
+            <input type="button" onclick="getCheckedCheckBoxesMedium(); getCheckedCheckBoxesEasy(); getCheckedCheckBoxesHard()" value="Вывести список">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
             <script src="app.js"></script>        
     </body>

@@ -66,30 +66,11 @@
             //alert(checkboxes[index].value); // делайте что нужно - это для наглядности
         }
     } */
-
     let checkboxesChecked = []; // можно в массиве их хранить, если нужно использовать 
     let checkboxesUnChecked = []; // можно в массиве их хранить, если нужно использовать 
 
-    function makeUL(array) {
-        // Create the list element:
-        let list = document.createElement('li');
-    
-        for (let i = 0; i < array.length; i++) {
-            // Create the list item:
-            let item = document.createElement('ul');
-    
-            // Set its contents:
-            item.appendChild(document.createTextNode(array[i]));
-    
-            // Add it to the list:
-            list.appendChild(item);
-        }
-    
-        // Finally, return the constructed list:
-        return list;
-    }
 
-    function getCheckedCheckBoxes() {
+    function getCheckedCheckBoxesMedium() {
         for (const checkbox of document.getElementsByClassName('medium')) {
             //iterating over all matched elements
             
@@ -140,7 +121,7 @@
         console.log("1-я горничная : " + maid1);
         console.log("2-я горничная : " + maid2);
         console.log("3-я горничная : " + maid3);
-        let textNode1 = document.createTextNode('1-я горничная : ');
+     /*    let textNode1 = document.createTextNode('1-я горничная : ');
         let textNode2 = document.createTextNode('2-я горничная : ');
         let textNode3 = document.createTextNode('3-я горничная : ');
         let textNode4 = document.createTextNode('4-я горничная : ');
@@ -150,9 +131,147 @@
         document.getElementById('newArray').appendChild(makeUL(maid2));
         document.getElementById('newArray').append(textNode3);
         document.getElementById('newArray').appendChild(makeUL(maid3));
-        document.getElementById('newArray').append(textNode4);
+        document.getElementById('newArray').append(textNode4); */
 
         //раздели номера на классы .ыаи
         //2 события через ; onclick
     }
 
+    function getCheckedCheckBoxesEasy() {
+        for (const checkbox of document.getElementsByClassName('easy')) {
+            //iterating over all matched elements
+            
+           if(checkbox.checked == true)
+           {
+                checkboxesChecked.push(checkbox.value); // положим в массив выбранный
+              //  alert(checkboxesChecked.value); // делайте что нужно - это для наглядности
+            
+           } //for selection
+           else if (checkbox.checked == false)//for unselection
+           {
+            checkboxesUnChecked.push(checkbox.value);
+           // alert(checkboxesUnChecked.value); 
+            }
+        }
+        console.log("Номера выездов : " + checkboxesChecked);
+        console.log("Номера текущей уборки : " + checkboxesUnChecked);
+        
+        let maid1 = checkboxesChecked.filter(item=>item[0]=="1");
+        let maid2 = checkboxesChecked.filter(item=>item[0]=="2");
+        let maid3 = checkboxesChecked.filter(item=>item[0]=="3");
+        
+      
+        while(maid2.length>maid3.length){
+            maid3.push(maid2[maid2.length-1]);
+            maid2.pop();
+        } 
+        while(maid3.length>maid1.length){
+            maid1.push(maid3[maid3.length-1]);
+            maid3.pop();
+        } 
+        while(maid1.length>maid2.length){
+            maid2.push(maid1[maid1.length-1]);
+            maid1.pop();
+        } 
+        while(maid2.length>maid3.length){
+            maid3.push(maid2[maid2.length-1]);
+            maid2.pop();
+        } 
+        while(maid3.length>maid1.length){
+            maid1.push(maid3[maid3.length-1]);
+            maid3.pop();
+        } 
+        while(maid1.length>maid2.length){
+            maid2.push(maid1[maid1.length-1]);
+            maid1.pop();
+        } 
+        console.log("1-я горничная : " + maid1);
+        console.log("2-я горничная : " + maid2);
+        console.log("3-я горничная : " + maid3);
+/*         let textNode1 = document.createTextNode('1-я горничная : ');
+        let textNode2 = document.createTextNode('2-я горничная : ');
+        let textNode3 = document.createTextNode('3-я горничная : ');
+        let textNode4 = document.createTextNode('4-я горничная : ');
+        document.getElementById('newArray').append(textNode1);
+        document.getElementById('newArray').appendChild(makeUL(maid1));
+        document.getElementById('newArray').append(textNode2);
+        document.getElementById('newArray').appendChild(makeUL(maid2));
+        document.getElementById('newArray').append(textNode3);
+        document.getElementById('newArray').appendChild(makeUL(maid3));
+        document.getElementById('newArray').append(textNode4); */
+
+
+      /*   let out_arr4 = document.getElementById('Julya');
+        out_arr4.innerHTML = maid4; */
+        
+    }
+
+    function getCheckedCheckBoxesHard(){
+        for (const checkbox of document.getElementsByClassName('hard')) {
+            //iterating over all matched elements
+            
+           if(checkbox.checked == true)
+           {
+                checkboxesChecked.push(checkbox.value); // положим в массив выбранный
+              //  alert(checkboxesChecked.value); // делайте что нужно - это для наглядности
+            
+           } //for selection
+           else if (checkbox.checked == false)//for unselection
+           {
+            checkboxesUnChecked.push(checkbox.value);
+           // alert(checkboxesUnChecked.value); 
+            }
+        }
+        console.log("Номера выездов : " + checkboxesChecked);
+        console.log("Номера текущей уборки : " + checkboxesUnChecked);
+        
+        let maid1 = checkboxesChecked.filter(item=>item[0]=="1");
+        let maid2 = checkboxesChecked.filter(item=>item[0]=="2");
+        let maid3 = checkboxesChecked.filter(item=>item[0]=="3");
+        
+      
+        while(maid2.length>maid3.length){
+            maid3.push(maid2[maid2.length-1]);
+            maid2.pop();
+        } 
+        while(maid3.length>maid1.length){
+            maid1.push(maid3[maid3.length-1]);
+            maid3.pop();
+        } 
+        while(maid1.length>maid2.length){
+            maid2.push(maid1[maid1.length-1]);
+            maid1.pop();
+        } 
+        while(maid2.length>maid3.length){
+            maid3.push(maid2[maid2.length-1]);
+            maid2.pop();
+        } 
+        while(maid3.length>maid1.length){
+            maid1.push(maid3[maid3.length-1]);
+            maid3.pop();
+        } 
+        while(maid1.length>maid2.length){
+            maid2.push(maid1[maid1.length-1]);
+            maid1.pop();
+        } 
+        
+       /*  for (const element of checkboxesChecked){
+            if ((maid1.length<maid2.length) && (maid1.length<maid3.length)){
+                maid1.push(element);
+            }
+            else if ((maid2.length<maid1.length) && (maid2.length<maid3.length)){
+                maid2.push(element);
+            }
+            else maid3.push(element);
+        }  */
+        let out_arr1 = document.getElementById('Aika');
+        out_arr1.innerHTML = "1-я горничная : " + maid1;
+        let out_arr2 = document.getElementById('Madina');
+        out_arr2.innerHTML = "2-я горничная : " +  maid2;
+        let out_arr3 = document.getElementById("Nurkiz");
+        out_arr3.innerHTML = "3-я горничная : " +  maid3;
+
+        console.log("1-я горничная : " + maid1);
+        console.log("2-я горничная : " + maid2);
+        console.log("3-я горничная : " + maid3);
+    }

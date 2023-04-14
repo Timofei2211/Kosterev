@@ -1,9 +1,22 @@
 .typesOfRooms{
     display: flex;
     flex-direction: row;
-    width: 600px;
 }
 
 .typeOfRoom{
     width: 100px;
+}
+.Output{
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    background-color: rgb(181, 238, 255);
+    font-style: oblique;
+    font-size: 20px;
+}
+
+.hard{
+    color: red;
 }
